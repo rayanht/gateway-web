@@ -1,0 +1,218 @@
+.completeprofile {
+    max-width: 572px;
+    margin: 0 auto;
+}
+.main-about-section .form-control:focus {
+    background-color: transparent !important;
+	color: #fff !important;
+}
+.gway-socialurl-row {
+    margin-bottom: 1rem;
+}
+.gway-socialurl-col-left {
+    width: 20%;
+}
+.gway-socialurl-col-center {
+    width: 76%;
+}
+.gway-socialurl-col-right {
+    width: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gway-socialurl-row {
+    display: flex;
+    flex-direction: row;
+    grid-column-gap: 10px;
+    align-items: center;
+}
+.gway-socialurl-col-left a {
+    background: #170627;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    text-decoration: none;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.6);
+    transition: 0.3s;
+}
+.gway-socialurl-col-left a:hover, .gway-socialurl-col-left a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: 0.3s;
+}
+.gway-socialurl-col-center input {
+    background: #170627;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    height: 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+.completeprofile .add-social-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.main-about-section button[type=submit] {
+    background: #170627;
+    border: 1px solid #A5A5A5;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #E5E5E5;
+    width: 210px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+.main-about-section button[type=submit]:hover, .main-about-section button[type=submit]:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: 0.3s;
+}
+.completeprofile .filepond--drop-label.filepond--drop-label label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0px 40px;
+	cursor: pointer;
+}
+.completeprofile .filepond--label-action {
+    color: #FE02B9;
+    text-decoration: none;
+}
+.completeprofile .filepond--panel-root {
+    background: #170627;
+    border: 1px dashed rgba(255, 255, 255, 0.2) !important;
+    border-radius: 5px !important;
+    border-style: solid !important;
+}
+.completeprofile .filepond--panel-bottom, .completeprofile .filepond--panel-top {
+	background: unset;
+    border: unset !important;
+    border-style: unset !important;
+}
+.add-social-row a:hover, .add-social-row a:focus {
+    transition: 0.3s;
+    border: none;
+    background: linear-gradient(to top, #FF00B8 0%, #7E3BDC 50.50%, #0075FF 100%);
+}
+.gway-socialurl-col-right a:hover, .gway-socialurl-col-right a:focus {
+  filter: invert(80%) sepia(57%) saturate(7299%) hue-rotate(354deg) brightness(91%) contrast(123%);
+}
+.add-social-row a {
+    transition: 0.3s;
+	width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	cursor: pointer;
+}
+.completeprofile .filepond--root.filepond--hopper {
+    margin-bottom: 0;
+}
+.gt-complete-profile h1 {
+    background: linear-gradient(88.04deg, #EE787B 22.54%, #E153F2 41.08%, #495BE0 65.25%, #6A39F3 86.1%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gt-complete-profile label.form-label {
+    margin-bottom: 12px;
+}
+.completeprofile .mb-3.row {
+    margin-bottom: 27px !important;
+}
+.gway-socialurl-col-right a {
+    cursor: pointer;
+}
+.completeprofile .filepond--drop-label.filepond--drop-label label img {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.completeprofile .filepond--panel-root {
+    min-height: 260px;
+}
+.completeprofile .filepond--wrapper {
+    min-height: 260px;
+    max-width: 210px;
+    background: #170627;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.completeprofile .filepond--root.filepond--hopper {
+    min-height: 260px;
+}
+.completeprofile .filepond--browser.filepond--browser {
+    min-height: 260px;
+}
+.completeprofile .filepond--root .filepond--drop-label {
+    min-height: 260px;
+}
+span.avatar-upload-action {
+    color: #FE02B9;
+}
+@media (max-width: 768px) {
+.gt-about-section h1 {
+    font-size: 60px;
+	margin-bottom: 60px;
+}		
+}
+@media (max-width: 767px) {
+.completeprofile .filepond--wrapper {
+    max-width: 100%;
+}
+.gt-about-section h1 {
+    font-size: 40px;
+	margin-bottom: 50px;
+	line-height: 1.2;
+}
+.gway-socialurl-row {
+    flex-wrap: wrap;
+}
+.gway-socialurl-col-left {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.gway-socialurl-col-center {
+    width: 100%;
+	margin-bottom: 10px;
+}
+.gway-socialurl-col-right {
+    width: 100%;
+}		
+}
