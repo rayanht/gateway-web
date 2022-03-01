@@ -11,10 +11,10 @@ import {
 	ControlLabel,
 	Col
 } from 'react-bootstrap';
-import './AddSkill.css';
+import './AddAttitude.css';
 import { connect } from 'react-redux';
-import { addAttitude } from "../actions";
-import space from '../utils/canvas';
+import { addAttitude } from "../../actions";
+import space from '../../utils/canvas';
 
 class AddAttitude extends React.Component
 {

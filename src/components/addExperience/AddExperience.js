@@ -13,9 +13,9 @@ import {
 } from 'react-bootstrap';
 import './AddExperience.css';
 import { connect } from 'react-redux';
-import { addExp } from "../actions";
+import { addExp } from "../../actions";
 import { createBrowserHistory } from 'history';
-import space from '../utils/canvas';
+import space from '../../utils/canvas';
 const history = createBrowserHistory();
 const years = [...Array(new Date().getFullYear() - 1989).keys()].map((e)=>e+1990);
 

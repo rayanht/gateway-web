@@ -36,6 +36,7 @@
 	min-height: 700px;
 	background-position: bottom;*/
 	padding-bottom: 100px;
+	padding-top: 15px;
 }
 .gt-about-section h1 {
 	background: linear-gradient(to right, #E153F2 43.17%, #495BE0 67.19%, #6A39F3 100%);

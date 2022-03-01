@@ -37,13 +37,13 @@
 	padding-bottom: 100px;
 }*/
 .gt-about-section h1 {
-	background: linear-gradient(to right, #E153F2 43.17%, #495BE0 67.19%, #6A39F3 100%);
+	background: linear-gradient(to right, #EE787B 0%, #E153F2 29.17%, #495BE0 67.19%, #6A39F3 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: 96px;
 	font-weight: 800;
 	text-align: center;
-	margin-bottom: 66px;
+	margin-bottom: 50px;
 	letter-spacing: -0.05em;
 }
 .ck.ck-editor {
@@ -80,6 +80,9 @@
 	margin: auto;
 }
 .text-editor .btn-primary {
+	font-size: 13px;
+	letter-spacing: 0.05em;
+	font-weight: 700;
 	max-width: 245px;
 	margin: auto;
 	padding: 9px;
@@ -202,7 +205,7 @@ label.form-check-label {
 
 .select__control:after {
     content: "";
-    background: url(http://gateway.devcmitexpert.com:3001/search-icon.svg) no-repeat center center;
+    background: url(http://gateway.devcmitexpert.com/search-icon.svg) no-repeat center center;
     width: 22px;
     height: 24px;
     right: 10px;
@@ -231,11 +234,14 @@ p.time-label strong {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 700;
+		font-size: 13px;
+    line-height: 20px;
 }
 label.form-check-label {
     color: #fff;
     font-weight: 300;
     letter-spacing: 0.5px;
+		font-size: 14px;
 }
 label.time-label.form-label {
     text-transform: inherit;
@@ -269,6 +275,7 @@ canvas#space-canvas {
     position: relative;
     z-index: 111;
 }
+
 @media(max-width: 767px){
 	.mbl-full{display: block !important;}
 }

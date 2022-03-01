@@ -13,8 +13,8 @@ import {
 } from 'react-bootstrap';
 import './AddLanguage.css';
 import { connect } from 'react-redux';
-import { addLang } from "../actions";
-import space from '../utils/canvas';
+import { addLang } from "../../actions";
+import space from '../../utils/canvas';
 
 class AddLanguage extends React.Component
 {

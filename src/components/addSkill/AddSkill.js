@@ -13,8 +13,8 @@ import {
 } from 'react-bootstrap';
 import './AddSkill.css';
 import { connect } from 'react-redux';
-import { addSkill } from "../actions";
-import space from '../utils/canvas';
+import { addSkill } from "../../actions";
+import space from '../../utils/canvas';
 
 class AddSkill extends React.Component
 {

@@ -3,8 +3,24 @@
     margin: 0 auto;
 }
 .main-about-section .form-control:focus {
-    background-color: transparent !important;
-	color: #fff !important;
+    color: #fff !important;
+    border: 1px solid #7E3BDC !important;
+    background: #af56ec !important;
+    box-shadow: 0 0 0 1px #af56ec !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid  #af56ec;
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px #af56ec inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 .gway-socialurl-row {
     margin-bottom: 1rem;
@@ -164,10 +180,10 @@
     margin-bottom: 15px;
 }
 .completeprofile .filepond--panel-root {
-    min-height: 260px;
+    min-height: 125px;
 }
 .completeprofile .filepond--wrapper {
-    min-height: 260px;
+    min-height: 125px;
     max-width: 210px;
     background: #170627;
     border: 1px dashed rgba(255, 255, 255, 0.2);
@@ -175,13 +191,13 @@
     border-radius: 5px;
 }
 .completeprofile .filepond--root.filepond--hopper {
-    min-height: 260px;
+    min-height: 125px;
 }
 .completeprofile .filepond--browser.filepond--browser {
-    min-height: 260px;
+    min-height: 125px;
 }
 .completeprofile .filepond--root .filepond--drop-label {
-    min-height: 260px;
+    min-height: 125px;
 }
 span.avatar-upload-action {
     color: #FE02B9;

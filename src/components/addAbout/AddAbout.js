@@ -9,8 +9,8 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import './AddAbout.css';
 import { connect } from 'react-redux';
-import { addAbout } from "../actions";
-import space from '../utils/canvas';
+import { addAbout } from "../../actions";
+import space from '../../utils/canvas';
 
 class AddAbout extends React.Component
 {

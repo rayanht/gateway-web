@@ -7,11 +7,11 @@ import {
 } from 'react-bootstrap';
 import './CompleteProfile.css';
 import { connect } from 'react-redux';
-import { addProfile } from "../actions";
-import space from '../utils/canvas';
+import { addProfile } from "../../actions";
+import space from '../../utils/canvas';
 
 // Import React FilePond
-import { FilePond, File, registerPlugin } from 'react-filepond'
+import { FilePond, registerPlugin } from 'react-filepond'
 
 // Import FilePond styles
 import 'filepond/dist/filepond.min.css'
@@ -50,7 +50,15 @@ class CompleteProfile extends React.Component
       user: {
       	displayName: '',
       	userName: '',
-      	userBio: ''
+      	avatar: '',
+      	userBio: '',
+      	socials: [
+    			{ platform_name: "Twitter", placeholder: "twitter.com/", platform_value: "" },
+    			{ platform_name: "Discord", placeholder: "AAA#0000", platform_value: "" },
+    			{ platform_name: "Telegram", placeholder: "@username", platform_value: "" },
+    			{ platform_name: "Github", placeholder: "username", platform_value: "" },
+    			{ platform_name: "Email", placeholder: "name@email.xyz", platform_value: "" },
+    		]
       }
     };
 
@@ -61,6 +69,31 @@ class CompleteProfile extends React.Component
   }
 
   componentDidMount() {
+
+  	var existing = localStorage.getItem('gtwUserState');
+		// If no existing data, create an array
+		// Otherwise, convert the localStorage string to an array
+		existing = existing ? JSON.parse(existing) : {};
+		// Set data to state
+		// console.log("avatar", this.dataURLtoFile(existing.profile.avatar, 'u.png'));
+		if(!!existing.profile) {
+			this.setState({ user: existing.profile });
+		}
+
+		if(!!existing.profile && !!existing.profile.avatar) {
+			if(existing.profile.avatar) {
+				this.setState(prevState => ({
+		    	...prevState,
+		      files: [{
+			    	...prevState.files,
+			    	source: existing.profile.avatar,
+			    	options: { type: "local"}
+		      }]
+		    }));
+			}
+		}
+		// this.setState({ files: { source: existing.profile.avatar, options: { type: "local" } } });
+
   	space(window.innerHeight, window.innerWidth,
       [window.innerHeight, window.innerWidth])
   }
@@ -71,29 +104,57 @@ class CompleteProfile extends React.Component
   }
   
   handleAddSocial = () => {
-  	this.setState(prevState => ({
+  
+  	/*this.setState(prevState => ({
       socials: [...prevState.socials, {
                 platform_name : "",
                 placeholder: "",
                 platform_value: "",
             }]
+    }));*/
+
+    this.setState(prevState => ({
+    	...prevState,
+      user: {
+	    	...prevState.user,
+	    	socials: [ ...prevState.user.socials, {
+	    			platform_name : "",
+						placeholder: "",
+						platform_value: "",
+				}]
+      }
     }));
   }
 
   handleRemoveSocial = (social) => {
-        this.setState({
-          socials: this.state.socials.filter((previousTag, index) => index !== social)
-        });
+  	const filtered = this.state.user.socials.filter((previousTag, index) => index !== social);
+  	this.setState(prevState => ({
+    	...prevState,
+      user: {
+	    	...prevState.user,
+	    	socials: filtered
+      }
+    }));
+    /*this.setState({
+      socials: this.state.user.socials.filter((previousTag, index) => index !== social)
+    });*/
   }
 
   handleSocialChange = (e, index) => {
 	    const { name, value } = e.target;
-	    const { socials } = this.state;
+	    const { socials } = this.state.user;
 	    const list = [...socials];
 	    list[index][name] = value;
-	    this.setState({
+	    /*this.setState({
 	        socials: list
-	    });
+	    });*/
+	    this.setState(prevState => ({
+    	...prevState,
+      user: {
+	    	...prevState.user,
+	    	socials: list
+      }
+    }));
 	};
 
 	handleChange(event) {
@@ -111,11 +172,10 @@ class CompleteProfile extends React.Component
   		event.preventDefault();
   		event.stopPropagation();
   		const form = event.currentTarget;
+
+  		// console.log("field", this.state.user.avatar, "files", this.state.files);
   		// console.log(this.pond.element.querySelectorAll('input[type="hidden"]'));
   		if (form.checkValidity() !== false) {
-  			console.log("valid");
-  			let obj = this.state.user;
-  			Object.assign(obj, {socials: this.state.socials});
   			this.props.setUserProfile(this.state.user);
     		// Get the existing data
 				var existing = localStorage.getItem('gtwUserState');
@@ -124,7 +184,7 @@ class CompleteProfile extends React.Component
 				// Otherwise, convert the localStorage string to an array
 				existing = existing ? JSON.parse(existing) : {};
 				// Add new data to localStorage Array
-				Object.assign(existing, { profile: obj } );
+				Object.assign(existing, { profile: this.state.user } );
 				// Save back to localStorage
 				localStorage.setItem('gtwUserState', JSON.stringify(existing));
 				this.setState({ redirect: true });
@@ -132,13 +192,29 @@ class CompleteProfile extends React.Component
   		this.setState({ isValidated: true });
   }
 
+  dataURLtoFile(dataurl, filename) {
+ 				console.log(dataurl);
+        var arr = dataurl.split(','),
+            mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]), 
+            n = bstr.length, 
+            u8arr = new Uint8Array(n);
+            
+        while(n--){
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        
+        return new File([u8arr], filename, {type:mime});
+  }
+
 	render()
   	{
   		if(this.state.redirect) {
 	    	return <Navigate to="/" />
 	    }
-  		const { displayName, userName, userBio } = this.state.user;
-  		const { socials } = this.state;
+  		const { displayName, userName, userBio, socials } = this.state.user;
+  		// const { socials } = this.state;
+  		const scope = this;
   		console.log(socials);
     	return (
     		<div className="main-about-section">
@@ -194,19 +270,64 @@ class CompleteProfile extends React.Component
 					          allowMultiple={false}
 					          allowReorder={true}
 					          maxFiles={1}
-					          name="files"
+					          name="avatar"
 					          allowFileEncode="true"
 					          acceptedFileTypes={['image/png', 'image/jpg', 'image/jpeg']}
 					          labelIdle="<img src='completeprofile/Vector.svg' /><span class='avatar-upload-action'>Upload</span> or drag your avatar here."
 					          oninit={() => this.handleInit()}
 					          onupdatefiles={fileItems => {
 					          	// console.log(fileItems);
-					          	// console.log(this.pond.element.querySelectorAll('input[type="hidden"]'));
+					          	 
 					            // Set currently active file objects to this.state
 					            this.setState({
 					              files: fileItems.map(fileItem => fileItem.file)
 					            });
 					          }}
+					          onaddfile={ (error, file) => {
+					          	if(error == null) {
+											  var reader = new FileReader();
+											  reader.onloadend = function() {
+											    // console.log('RESULT', reader.result);
+											    scope.setState(prevState => ({
+													    user: {                   // object that we want to update
+													        ...prevState.user,    // keep all other key-value pairs
+													        avatar: reader.result       // update the value of specific key
+													    }
+													}))
+					          	
+											  }
+											  reader.onerror = function (error) {
+													console.log('Error: ', error);
+												};
+											  reader.readAsDataURL(file.file);
+											} else {
+												scope.setState(prevState => ({
+													    user: {                   // object that we want to update
+													        ...prevState.user,    // keep all other key-value pairs
+													        avatar: ""       // update the value of specific key
+													    }
+												}))
+											}
+											
+					          }}
+					          onremovefile={ (error, file) => {
+					          	scope.setState(prevState => ({
+													    user: {                   // object that we want to update
+													        ...prevState.user,    // keep all other key-value pairs
+													        avatar: ""       // update the value of specific key
+													    }
+												}))
+					          }}
+					          server={{
+						          load: (source, load, error, progress, abort, headers) => {
+						            var myRequest = new Request(source);
+						            fetch(myRequest).then(function(response) {
+						              response.blob().then(function(myBlob) {
+						                load(myBlob);
+						              });
+						            });
+						          }
+						        }}
 					        />
 							</Form.Group>
 							</div>

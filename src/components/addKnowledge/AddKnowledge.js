@@ -11,10 +11,10 @@ import {
 	ControlLabel,
 	Col
 } from 'react-bootstrap';
-import './AddSkill.css';
+import './AddKnowledge.css';
 import { connect } from 'react-redux';
-import { addKnowledge } from "../actions";
-import space from '../utils/canvas';
+import { addKnowledge } from "../../actions";
+import space from '../../utils/canvas';
 
 class AddKnowledge extends React.Component
 {
