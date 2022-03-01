@@ -1,7 +1,7 @@
-header.gateway-header {margin-bottom: 40px;}
+/* header.gateway-header {margin-bottom: 40px;} */
 header.gateway-header a.navbar-brand img {width: 165px;height: 42px; max-width: 100%;}
 header.gateway-header .navbar-collapse { padding-left: 40px;}
-header.gateway-header .navbar-expand-lg .navbar-nav .nav-link {font-style: normal;font-weight: normal;font-size: 13px;line-height: 19px;
+header.gateway-header .navbar-expand-lg .navbar-nav .nav-link {font-style: normal;font-weight: normal;font-size: 14px;line-height: 19px;
 letter-spacing: 0.05em;color: #FF00B8;}
 header.gateway-header .navbar-expand-lg .navbar-nav .nav-link {padding-right: 30px;}
 header.gateway-header nav.navbar {padding: 33px 0px;border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
@@ -22,6 +22,7 @@ header.gateway-header .navbar-expand-lg .navbar-nav .nav-link:hover {color: #7e3
 header.gateway-header .last-nav-item:before {content: "";position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: -1;margin: -1px;border-radius: inherit;background: linear-gradient(to right, #FF00B8 0%, #7E3BDC 50.52%, #0075FF 100%);}
 header.gateway-header .dropdown-menu {width: 100%;}
 header.gateway-header .last-nav-item:hover, header.gateway-header .last-nav-item:focus {background: linear-gradient(to right, #FF00B8 0%, #7E3BDC 50.52%, #0075FF 100%);transition: 0.3s;}
+
 @media (max-width: 991px) {
 header.gateway-header .navbar-light .navbar-toggler-icon {
     width: 1.8em;

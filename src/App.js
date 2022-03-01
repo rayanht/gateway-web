@@ -3,14 +3,15 @@ import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from "./layout/Header/Header";
-import ProfileUpdate from "./components/ProfileUpdate";
-import AddAbout from "./components/AddAbout";
-import AddExperience from "./components/AddExperience";
-import AddLanguage from "./components/AddLanguage";
-import AddSkill from "./components/AddSkill";
-import CompleteProfile from "./components/CompleteProfile";
-import AddKnowledge from "./components/AddKnowledge";
-import AddAttitude from "./components/AddAttitude";
+import ProfileUpdate from "./components/profileUpdate/ProfileUpdate";
+import AddAbout from "./components/addAbout/AddAbout";
+import AddExperience from "./components/addExperience/AddExperience";
+import AddLanguage from "./components/addLanguage/AddLanguage";
+import AddSkill from "./components/addSkill/AddSkill";
+import CompleteProfile from "./components/completeProfile/CompleteProfile";
+import AddKnowledge from "./components/addKnowledge/AddKnowledge";
+import AddAttitude from "./components/addAttitude/AddAttitude";
+
 // import { createBrowserHistory } from 'history';
 // const history = createBrowserHistory();
 function App() {

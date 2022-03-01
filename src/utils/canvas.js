@@ -1,6 +1,8 @@
 /*
     *** TRAVELING THROUGH SPACE ***
+    
     An attempt of writing a space travel animation
+    
 */
 
 export default function space(height, width) {
